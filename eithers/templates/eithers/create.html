@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+<form action="{% url 'eithers:create'%}" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="inputTitle">Title</label>
+        <input type="text" name="title" class="form-control" id="inputTitle" placeholder="Title">
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputIssue1">Issue 1</label>
+            <input type="text" name="issue1" class="form-control" id="inputIssue1" placeholder="Issue 1">
+            <input type="file" name="image" accept="image/*">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputIssue2">Issue 2</label>
+            <input type="text" name="issue2" class="form-control" id="inputIssue2" placeholder="Issue 2">
+            <input type="file" name="image" accept="image/*">
+        </div>
+    </div>
+</form>
+{% endblock body %}
